@@ -1,29 +1,73 @@
-Script to add all items from quixel
-As quixel is being removed, all items are free to aquire. This script is to automate the process to add items to your account (As of writing, a total of 18874 items)
+# Quixel Item Adder
 
-Note: This script only tested in the latest version of Chrome.
+## Overview
+This Chrome extension automates the process of adding items from Quixel to your account. As Quixel is being removed, all items are free to acquire. This script helps you add items efficiently.
 
-How to use
-Copy the script from below (run.js)
-Login into https://quixel.com
-Go to https://quixel.com/megascans/collections
-Open devtools (F12) -> Go to "Console" tab
-Paste in the script and press Enter.
-A dialog should popup confirming the execution, click "OK"
-Sit back and wait
-Common issues
-Getting "Forbidden" error. (Even after refresh, the whole page just shows "Forbidden")
-There is a chance that the API adding too fast and you hit the rate limit of the API. (My testing is around after 10 pages, so ~10k items).
-Wait after ~10-20 minutes and continue. See Common Fixes -> Restart script to continue the execution after you can load https://quixel.com.
-The script seems to be paused/hang
-It could be too much logging going it. Try monitor the script, if it says "END PAGE X", note the page number down (in case need restart) and clear the console by clicking the "🚫" icon in devtools.
-See Common Fixes -> Restart script for fixing.
-Getting the error **UNABLE TO ADD ITEM**
-There should have the error message shown in ( ). If it is user already owns specified asset at a higher or equal resolution, then its already in your account.
-Getting the error cannot find authentication token. Please login again
-Clear browser cookies and re-login quixel again. Try just simply add 1 item manully. If it success, then see Common Fixes -> Restart script for continue the execution.
-Common Fixes
-Restart Script
-If it hang too long, note what page is had going (Search for log like PAGE 10 START)
-Copy the run.js script
-Update the startPage = 0 on the first line to startPage = 10 (assuming page 10 was hanged)
+## Features
+- Specify the starting page for adding items.
+- Option to automatically clear the console during the process.
+- Error handling for already owned assets and other issues.
+
+## Prerequisites
+- Google Chrome installed on your computer.
+- A Quixel account to log in and access items.
+
+## How to Load the Extension Unpacked
+
+1. **Download the Extension Files**
+   - Clone or download the repository containing the extension files.
+   - Ensure you have the following files in your directory:
+     - `manifest.json`
+     - `background.js`
+     - `popup.html`
+     - `popup.js`
+     - `run.js`
+
+2. **Open Chrome Extensions Page**
+   - Open Google Chrome.
+   - In the address bar, type `chrome://extensions/` and press Enter.
+
+3. **Enable Developer Mode**
+   - In the top right corner of the Extensions page, toggle the "Developer mode" switch to ON.
+
+4. **Load Unpacked Extension**
+   - Click on the "Load unpacked" button.
+   - In the file dialog, navigate to the directory where you saved the extension files and select it.
+   - The extension should now appear in your list of extensions.
+
+## How to Use the Extension
+
+1. **Log in to Quixel**
+   - Open a new tab and go to [Quixel](https://quixel.com).
+   - Log in to your account.
+
+2. **Navigate to the Megascans Collections**
+   - Go to [Megascans Collections](https://quixel.com/megascans/collections).
+
+3. **Open Developer Tools**
+   - Press `F12` or right-click on the page and select "Inspect" to open Developer Tools.
+   - Go to the "Console" tab.
+
+4. **Open the Extension Popup**
+   - Click on the extension icon in the Chrome toolbar to open the popup.
+
+5. **Set Parameters**
+   - Enter the starting page number in the "Start Page" input field.
+   - Check or uncheck the "Auto Clear Console" option based on your preference.
+
+6. **Start Adding Items**
+   - Click the "Start Adding Items" button.
+   - A confirmation dialog will appear showing the total number of items to be added. Click "OK" to proceed.
+
+7. **Monitor the Process**
+   - The console will display logs for each page processed, including any errors or warnings for items that cannot be added.
+
+## Common Issues
+- **Authentication Token Error**: If you see an error about the authentication token, ensure you are logged in to Quixel and refresh the page.
+- **Rate Limiting**: If you encounter a "Forbidden" error, you may have hit the API rate limit. Wait for a while before trying again.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgments
+- Thanks to the Quixel team for providing the assets.

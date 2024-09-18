@@ -1,17 +1,19 @@
 document.getElementById('start').addEventListener('click', () => {
     const startPage = parseInt(document.getElementById('startPage').value, 10);
-    
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+    const autoClearConsole = document.getElementById('autoClearConsole').checked;
+
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.scripting.executeScript({
-            target: {tabId: tabs[0].id},
-            func: (startPage) => {
-                window.startPage = startPage; // Set the startPage variable in the context of run.js
+            target: { tabId: tabs[0].id },
+            func: (startPage, autoClearConsole) => {
+                window.startPage = startPage;
+                window.autoClearConsole = autoClearConsole;
             },
-            args: [startPage]
+            args: [startPage, autoClearConsole]
         });
 
         chrome.scripting.executeScript({
-            target: {tabId: tabs[0].id},
+            target: { tabId: tabs[0].id },
             files: ['run.js']
         });
     });
