@@ -1,6 +1,4 @@
-
-(await (async (startPage = 0, autoClearConsole = true) => {
-
+(async () => {
     const getCookie = (name) => {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
@@ -66,8 +64,11 @@
     console.log(`-> Total Items to add: ${totalItems} | ${totalPages} total pages with ${itemsPerPage} per page`)
     if (!confirm(`Click OK to start adding ${totalItems} items in your account.`)) return
   
+    // Define startPage with a default value
+    let startPage = 0; // Set to 0 or any other default value you want
+
     // Loop
-    for (let pageIdx = startPage || 0; pageIdx < totalPages; pageIdx++) {
+    for (let pageIdx = startPage; pageIdx < totalPages; pageIdx++) {
       console.log("-> ======================= PAGE " + pageIdx + "/" + totalPages + " START =======================")
   
       console.log("-> Getting Items from page " + pageIdx + " ...")
@@ -80,4 +81,4 @@
       if (autoClearConsole) console.clear() // Fix the issue that too much log hangs the console. Set autoClearConsole = false to keep the logs
   
     }
-  })())
+})();
