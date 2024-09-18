@@ -5,6 +5,8 @@ This Chrome extension automates the process of adding items from Quixel to your 
 
 As Quixel is being removed, all items are free to acquire. This script helps you add items efficiently.
 
+Original: https://gist.github.com/jamiephan/0c04986c7f2e62d5c87c4e8c8ce115fc#file-run-js
+
 ## Features
 - Specify the starting page for adding items.
 - Option to automatically clear the console during the process.
