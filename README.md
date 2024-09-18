@@ -75,3 +75,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Acknowledgments
 - Thanks to the Quixel team for providing the assets.
+- Thanks to Jamie for the original code.
