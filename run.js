@@ -64,8 +64,8 @@
     console.log(`-> Total Items to add: ${totalItems} | ${totalPages} total pages with ${itemsPerPage} per page`)
     if (!confirm(`Click OK to start adding ${totalItems} items in your account.`)) return
   
-    // Define startPage with a default value
-    let startPage = 0; // Set to 0 or any other default value you want
+    // Use the startPage variable set from popup.js
+    let startPage = window.startPage || 0; // Default to 0 if not set
 
     // Loop
     for (let pageIdx = startPage; pageIdx < totalPages; pageIdx++) {
