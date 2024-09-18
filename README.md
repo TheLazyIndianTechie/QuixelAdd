@@ -1,7 +1,9 @@
 # Quixel Item Adder
 
 ## Overview
-This Chrome extension automates the process of adding items from Quixel to your account. As Quixel is being removed, all items are free to acquire. This script helps you add items efficiently.
+This Chrome extension automates the process of adding items from Quixel to your account and is inspired by the original work of https://github.com/jamiephan. Please head over there and show some love.
+
+As Quixel is being removed, all items are free to acquire. This script helps you add items efficiently.
 
 ## Features
 - Specify the starting page for adding items.
