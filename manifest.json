@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Quixel Item Adder",
+  "version": "1.0",
+  "description": "Automate the process of adding items from Quixel.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://quixel.com/*"],
+      "js": ["run.js"]
+    }
+  ]
+}
